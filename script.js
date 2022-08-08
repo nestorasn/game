@@ -14,7 +14,7 @@ function oneRound() {
     const playerSelection = prompt('Rock, Scissors, or Paper?','');
     const computerSelection = computerChoice(choice);
     alert(`You use: ${playerSelection}! Computer uses: ${computerSelection}!`);
-    if (playerSelection === 'Rock'){
+    if (playerSelection.toUpperCase() === 'Rock'.toUpperCase()){
     if (computerSelection === 'Scissors') {
         alert('YOU WIN!')
         return playerScore += 1
@@ -25,7 +25,8 @@ function oneRound() {
         return computerScore += 1
     }
 } 
-if (playerSelection === 'Paper'){
+
+if (playerSelection.toUpperCase() === 'Paper'.toUpperCase()){
     if (computerSelection === 'Rock') {
         alert('YOU WIN!')
         return playerScore += 1
@@ -36,7 +37,7 @@ if (playerSelection === 'Paper'){
         return computerScore += 1
     }
 } 
-if (playerSelection === 'Scissors'){
+if (playerSelection.toUpperCase() === 'Scissors'.toUpperCase()){
     if (computerSelection === 'Paper') {
         alert('YOU WIN!')
         return playerScore += 1
@@ -46,7 +47,9 @@ if (playerSelection === 'Scissors'){
         alert('YOU LOSE!')
         return computerScore += 1
     }
-} 
+} else {
+    alert(`${playerSelection} is unable to interact with ${computerSelection}. Please choose rock, scissors, or paper.`)
+}
 }
 
 function game(){
