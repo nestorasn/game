@@ -1,13 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="script.js"></script>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>rock scissors paper</title>
-</head>
-<body>
-    
-</body>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="one">
+      <div class="player"><h1>PLAYER</h1></div>
+      <div class="player-choice">
+        <ul>
+          <li class="pcr">🪨</li>
+          <li class="pcs">✂️</li>
+          <li class="pcp">📄</li>
+        </ul>
+      </div>
+    </div>
+    <div class="two">
+      <div class="opponent"><h1>OPPONENT</h1></div>
+      <div><h1 class="opponent-choice"></h1></div>
+    </div>
+    <div class="three">
+      <h1>
+        PLAYER:
+        <h1 class="player-score"></h1>
+      </h1>
+      <h1>
+        OPPONENT:
+        <h1 class="opponent-score"></h1>
+      </h1>
+      <h1>
+        ROUND:
+        <h1 class="round"></h1>
+      </h1>
+    </div>
+
+    <div class="four"><h1 class="reset">RESET</h1></div>
+
+    <script src="script.js"></script>
+  </body>
 </html>

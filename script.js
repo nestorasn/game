@@ -1,76 +1,74 @@
-function computerChoice(choice){
-    return choice[Math.floor(Math.random()*choice.length)];
+function computerChoice(choice) {
+  return choice[Math.floor(Math.random() * choice.length)];
 }
 
-const choice = ['Rock', 'Scissors', 'Paper'];
-// const playerSelection = prompt('Rock, Scissors, or Paper?','');
-// const computerSelection = computerChoice(choice);
+const choice = ["Rock", "Scissors", "Paper"];
+
 let computerScore = 0;
 let playerScore = 0;
+document.querySelector(".opponent-score").textContent = computerScore;
+document.querySelector(".player-score").textContent = playerScore;
+document.querySelector(".opponent-choice").textContent = "?";
 
-//alert(`You use: ${playerSelection}! Computer uses: ${computerSelection}!`);
+document.querySelector(".pcr").addEventListener("click", function () {
+  const computerSelection = computerChoice(choice);
+  if (computerSelection === "Scissors") {
+    document.querySelector(".opponent-choice").textContent = "✂️";
+    document.querySelector(".round").textContent = "YOU WIN!";
+    playerScore += 1;
+    document.querySelector(".player-score").textContent = playerScore;
+  } else if (computerSelection === "Rock") {
+    document.querySelector(".opponent-choice").textContent = "🪨";
+    document.querySelector(".round").textContent = "DRAW!";
+  } else if (computerSelection === "Paper") {
+    document.querySelector(".opponent-choice").textContent = "📄";
+    document.querySelector(".round").textContent = "YOU LOSE!";
+    computerScore += 1;
+    document.querySelector(".opponent-score").textContent = computerScore;
+  }
+});
 
-function oneRound() {
-    const playerSelection = prompt('Rock, Scissors, or Paper?','');
-    const computerSelection = computerChoice(choice);
-    alert(`You use: ${playerSelection}! Computer uses: ${computerSelection}!`);
-    if (playerSelection.toUpperCase() === 'Rock'.toUpperCase()){
-    if (computerSelection === 'Scissors') {
-        alert('YOU WIN!')
-        return playerScore += 1
-    } else if (computerSelection === 'Rock') {
-        alert('TIE GAME!')
-    } else if (computerSelection === 'Paper') {
-        alert('YOU LOSE!')
-        return computerScore += 1
-    }
-} 
+document.querySelector(".pcs").addEventListener("click", function () {
+  const computerSelection = computerChoice(choice);
+  if (computerSelection === "Scissors") {
+    document.querySelector(".opponent-choice").textContent = "✂️";
+    document.querySelector(".round").textContent = "DRAW!";
+  } else if (computerSelection === "Rock") {
+    document.querySelector(".opponent-choice").textContent = "🪨";
+    document.querySelector(".round").textContent = "YOU LOSE!";
+    computerScore += 1;
+    document.querySelector(".opponent-score").textContent = computerScore;
+  } else if (computerSelection === "Paper") {
+    document.querySelector(".opponent-choice").textContent = "📄";
+    document.querySelector(".round").textContent = "YOU WIN!";
+    playerScore += 1;
+    document.querySelector(".player-score").textContent = playerScore;
+  }
+});
 
-if (playerSelection.toUpperCase() === 'Paper'.toUpperCase()){
-    if (computerSelection === 'Rock') {
-        alert('YOU WIN!')
-        return playerScore += 1
-    } else if (computerSelection === 'Paper') {
-        alert('TIE GAME!')
-    } else if (computerSelection === 'Scissors') {
-        alert('YOU LOSE!')
-        return computerScore += 1
-    }
-} 
-if (playerSelection.toUpperCase() === 'Scissors'.toUpperCase()){
-    if (computerSelection === 'Paper') {
-        alert('YOU WIN!')
-        return playerScore += 1
-    } else if (computerSelection === 'Scissors') {
-        alert('TIE GAME!')
-    } else if (computerSelection === 'Rock') {
-        alert('YOU LOSE!')
-        return computerScore += 1
-    }
-} else {
-    alert(`${playerSelection} is unable to interact with ${computerSelection}. Please choose rock, scissors, or paper.`)
-}
-}
+document.querySelector(".pcp").addEventListener("click", function () {
+  const computerSelection = computerChoice(choice);
+  if (computerSelection === "Scissors") {
+    document.querySelector(".opponent-choice").textContent = "✂️";
+    document.querySelector(".round").textContent = "YOU LOSE!";
+    computerScore += 1;
+    document.querySelector(".opponent-score").textContent = computerScore;
+  } else if (computerSelection === "Rock") {
+    document.querySelector(".opponent-choice").textContent = "🪨";
+    document.querySelector(".round").textContent = "YOU WIN!";
+    playerScore += 1;
+    document.querySelector(".player-score").textContent = playerScore;
+  } else if (computerSelection === "Paper") {
+    document.querySelector(".opponent-choice").textContent = "📄";
+    document.querySelector(".round").textContent = "DRAW!";
+  }
+});
 
-function game(){
-    
-for (let i = 0; i < 5; i++) {
-
-oneRound();
-}
-}
-game();
-
-alert(`Player Score: ${playerScore} : Computer Score: ${computerScore}`)
-
-if (playerScore > computerScore) {
-    alert('YOU ARE THE CHAMPION!!')
-} else if (playerScore < computerScore) {
-    alert('YOU HAVE BEEN DEFEATED!!')
-} else {
-    alert("IT'S A DRAW!!")
-}
-  
-
-
-
+document.querySelector(".reset").addEventListener("click", function () {
+  computerScore = 0;
+  playerScore = 0;
+  document.querySelector(".player-score").textContent = playerScore;
+  document.querySelector(".opponent-score").textContent = computerScore;
+  document.querySelector(".round").textContent = "";
+  document.querySelector(".opponent-choice").textContent = "?";
+});

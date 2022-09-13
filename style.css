@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  font-family: "Permanent Marker";
+}
+
+body {
+  height: 100vh;
+}
+
+.one {
+  position: absolute;
+  bottom: 1%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+}
+
+.player {
+  position: relative;
+}
+
+.player-choice {
+  position: relative;
+}
+
+li {
+  padding-top: 50px;
+  font-size: 50px;
+  display: inline;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.pcr:hover {
+  cursor: pointer;
+}
+.pcs:hover {
+  cursor: pointer;
+}
+.pcp:hover {
+  cursor: pointer;
+}
+
+.two {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+.opponent {
+  font-size: 25px;
+}
+
+.opponent-choice {
+  font-size: 100px;
+  text-align: center;
+}
+
+.three {
+  position: absolute;
+  top: 17%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.round {
+  color: red;
+  font-size: 25px;
+  transition: all 0.5s;
+}
+
+.four {
+  position: absolute;
+  left: 5%;
+  top: 5%;
+}
+
+.reset:hover {
+  cursor: pointer;
+}
